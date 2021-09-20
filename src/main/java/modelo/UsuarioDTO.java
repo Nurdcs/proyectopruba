@@ -16,6 +16,16 @@ public class UsuarioDTO {
 	this.rol = rol;
 	this.estado = estado;
 }
+ 
+
+
+
+
+public UsuarioDTO(int documento) {
+	this.documento = documento;
+}
+
+
 
 
 
