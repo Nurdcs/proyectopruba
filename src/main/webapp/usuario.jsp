@@ -6,38 +6,30 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="js/consultar.js"></script>
 </head>
 <body>
-<%
-//Conexion con=new Conexion();
-//con.conexiondb();
 
-String d="",u="",c="",r="",e="";
-if(request.getParameter("do")!=null){
-d=request.getParameter("do");
-u=request.getParameter("us");
-c=request.getParameter("cl");
-r=request.getParameter("ro");
-e=request.getParameter("es");
-}
-%>
 <form action="ServletGestionUsuario" method="post">
 <h1>Formulario de  ingreso</h1>
 <select>
 <option></option>
 </select>
-<input type="text" name="doc"  value="<%=d%>">
-<input type="text" name="usu"  value="<%=u%>">
-<input type="text" name="cla"  value="<%=c%>">
-<input type="text" name="rol"  value="<%=r%>">
-<input type="text" name="est"  value="<%=e%>">
+<input type="text" name="doc"  >
+<input type="text" name="usu"  >
+<input type="text" name="cla"  >
+<input type="text" name="rol"  >
+<input type="text" name="est"  >
 <input type="submit" name="btnins" value="Registrar">
-<input type="submit" name="btncon" value="Consultar">
-<input type="submit" name="btnact" value="Actualizar">
-<input type="submit" name="btneli" value="Eliminar">
 
 </form>
 
+
+<form action="ServletGestionUsuario" method="post">
+<input type="text" name="doc"  >
+<input type="submit" name="btncon" value="Consultar">
+</form>
 
 </body>
 </html>

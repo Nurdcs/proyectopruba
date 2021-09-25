@@ -86,20 +86,10 @@ public class ServletGestionUsuario extends HttpServlet {
 		 r=recdatos.getRol();
 		 e=recdatos.getEstado();
 		 
-		 response.sendRedirect("usuario.jsp?do="+doc+"&&us="+u+"&&cl="+c+"&&ro="+r+"&&es="+e);
+		 response.sendRedirect("consultar.jsp?do="+doc+"&&us="+u+"&&cl="+c+"&&ro="+r+"&&es="+e);
 			
 			
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		if(request.getParameter("btnact")!=null) {
 			//Acción para consultar un usuraio
 		  boolean dat;
@@ -146,12 +136,7 @@ public class ServletGestionUsuario extends HttpServlet {
 			
 		}
 		
-		ArrayList<UsuarioDTO> lista=new ArrayList<UsuarioDTO>();
-		usdao=new UsuarioDAO();
-		lista=usdao.consultar();
-		 try ( PrintWriter out = response.getWriter()) {
-		 out.println("<select> <option> " + request.getContextPath() + "</option></select>");
-		 }
+		
 		
 		
 		

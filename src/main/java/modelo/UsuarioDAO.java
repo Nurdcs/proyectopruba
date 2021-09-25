@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import com.sun.org.apache.bcel.internal.generic.RETURN;
+
 
 import controlador.Conexion;
 
@@ -110,7 +110,11 @@ public boolean actualizar(UsuarioDTO us) {
 	
 	return dat;	
 }
+
+
+
 public ArrayList<UsuarioDTO> consultar(){
+	
 	ArrayList<UsuarioDTO> lista=new  ArrayList<UsuarioDTO>();
 	try {
 		ps=cnn.prepareStatement("SELECT * FROM usuario");
