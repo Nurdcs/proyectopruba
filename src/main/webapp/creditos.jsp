@@ -11,7 +11,7 @@
 
 
 <form action="Creditos" method="post" enctype="multipart/form-data">
-<input type="file" name="archivo" value="Examinar" >
+<input type="file" name="archivo" value="" >
 <input type="submit" name="cargar" value="add Archivo">
 </form>
 </body>

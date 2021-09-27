@@ -48,9 +48,8 @@ public class Creditos extends HttpServlet {
 		
 		//if(request.getParameter("cargar")!=null) {
 			
-			Part archivo= request.getPart("archivo");
-			//String nombre="hola.csv";
-			String Url="C:\\Users\\nyral\\eclipse-workspace\\Aplicacionweb10\\src\\main\\webapp\\documentos\\";
+		 Part archivo= request.getPart("archivo");
+		   String Url="C:\\\\Users\\\\nyral\\\\eclipse-workspace\\\\Aplicacionweb10\\\\src\\\\main\\\\webapp\\\\documentos\\\\";
 			
 			//String Url="C:\\Users\\nyral\\OneDrive\\Escritorio\\arcivoseclipse\\";
 			
@@ -59,41 +58,48 @@ public class Creditos extends HttpServlet {
 			//JOptionPane.showMessageDialog(null, tipo);
 			//String Url="C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/";
 			
-			if(archivo.getContentType().equals("application/vnd.ms-excel")) {
-				
-				JOptionPane.showMessageDialog(null, "hhhhhhhhh");
-			try {
-			InputStream file= archivo.getInputStream();
-			JOptionPane.showMessageDialog(null, Url);
-			File copia= new File(Url+"archivo8.csv");
-			FileOutputStream escribir= new FileOutputStream(copia);
-			int num=file.read();
-			while(num !=-1) {
-				
-				escribir.write(num);
-				num=file.read();
-			}
-			file.close();
-			escribir.close();
-			boolean x;
-			JOptionPane.showMessageDialog(null, "Se cargo el archivo correctamente");
-			CreditoDAO credao=new CreditoDAO();
-			x=credao.cargarcredito(Url+"archivo8.csv");
-			if(x) {
-				response.sendRedirect("creditos.jsp?men=Se registro los Libros correctamente");
-			}else
-			{
-				response.sendRedirect("creditos.jsp?men=No se registraron Libros");
-			}
-			}catch(Exception e) {
-				JOptionPane.showMessageDialog(null, "Error al cargar el archivoooooo: "+e);
-				response.sendRedirect("creditos.jsp?men=Error al cargar el archivo: ");
-				
-			}
-			}else
-			{
-				response.sendRedirect("Libros.jsp?men=Formato de Archivo no permitido");
+			if(request.getParameter("cargar")!=null) {
+			
+					
+				try {
+				InputStream file= archivo.getInputStream();
+				JOptionPane.showMessageDialog(null, Url);
+				File copia= new File(Url+"archivo11.csv");
+				FileOutputStream escribir= new FileOutputStream(copia);
+				int num=file.read();
+				while(num !=-1) {
+					
+					escribir.write(num);
+					num=file.read();
 				}
+				
+				
+				file.close();
+				escribir.close();
+				
+				boolean x;
+				JOptionPane.showMessageDialog(null, "Se cargo el archivo correctamente");
+				
+				CreditoDAO credao=new CreditoDAO();
+				
+				x=credao.cargarcredito(Url+"archivo11.csv");
+				if(x) {
+					JOptionPane.showMessageDialog(null, "Datos cargados en la bd");
+				}
+				
+				else
+				{
+					JOptionPane.showMessageDialog(null, "No se cargaron los datos");
+				}
+				}catch(Exception e) {
+					JOptionPane.showMessageDialog(null, "Error al cargar el archivoooooo: "+e);
+									}
+					
+				
+			
+			}
+			
+			
 		
 		
 		

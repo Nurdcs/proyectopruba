@@ -14,17 +14,17 @@ public class CreditoDAO {
 	Conexion con=new Conexion();
 	Connection cnn=con.conexiondb();
 	PreparedStatement ps;
-	ResultSet rs;	
 	
 	
-public boolean cargarcredito(String URL) {
+	
+   public boolean cargarcredito(String URL) {
 		JOptionPane.showMessageDialog(null, "en dao"+URL);
 		boolean resul=false;
 		try {
 			
 		/*String sql="load data infile '"+URL+"' into table creditos fields terminated by ',' lines terminated by '\r\n'";*/
-			String loadQuery = "LOAD DATA  INFILE '"+URL+"' INTO TABLE creditos FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n' ";
-		ps = cnn.prepareStatement(loadQuery);
+			ps=cnn.prepareStatement( "load data infile '"+URL+"' into table lineascredito fields terminated by ','  lines terminated  by '\r\n';");
+		
 		JOptionPane.showMessageDialog(null, "en ps");
 		resul=ps.executeUpdate()>0;
 		}catch(SQLException e) {

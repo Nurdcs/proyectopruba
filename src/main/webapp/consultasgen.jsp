@@ -11,7 +11,7 @@
 <body>
 
 <form action="">
-<input type="button" value="Usuarios" class="btnconsultar" >
+<input type="button" value="Usuariosddd" class="btnconsultar" >
 </form>
 
 <table id="tabla">
