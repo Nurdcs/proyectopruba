@@ -23,10 +23,7 @@ import modelo.CreditoDAO;
 @MultipartConfig
 public class Creditos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+  
     public Creditos() {
         super();
         // TODO Auto-generated constructor stub
