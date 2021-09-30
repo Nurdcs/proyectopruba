@@ -22,11 +22,11 @@ public class CreditoDAO {
 		boolean resul=false;
 		try {
 			
-		/*String sql="load data infile '"+URL+"' into table creditos fields terminated by ',' lines terminated by '\r\n'";*/
-			ps=cnn.prepareStatement( "load data infile '"+URL+"' into table lineascredito fields terminated by ','  lines terminated  by '\r\n';");
 		
-		JOptionPane.showMessageDialog(null, "en ps");
-		resul=ps.executeUpdate()>0;
+		ps=cnn.prepareStatement( "load data infile '"+URL+"' into table lineascredito fields terminated by ','  lines terminated  by '\r\n';");
+		
+    	resul=ps.executeUpdate()>0;
+    	
 		}catch(SQLException e) {
 			JOptionPane.showMessageDialog(null,"Error al registrar creditosmm: "+ e);
 			//e.printStackTrace();

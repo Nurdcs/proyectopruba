@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<%! String uss; %>
 <%
 //Conexion con=new Conexion();
 //con.conexiondb();
@@ -20,10 +20,12 @@ c=request.getParameter("cl");
 r=request.getParameter("ro");
 e=request.getParameter("es");
 }
+HttpSession  objsesion=request.getSession();
+uss=(String)objsesion.getAttribute("llevausuario");
 %>
 
 
-
+<label><%=uss%></label>
 
 <form action="ServletGestionUsuario" method="post">
 <table>

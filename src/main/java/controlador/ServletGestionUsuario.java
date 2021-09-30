@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.swing.JOptionPane;
 
 import modelo.UsuarioDAO;
@@ -41,7 +42,7 @@ public class ServletGestionUsuario extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		HttpSession sesion=request.getSession();
 		String u,c,r,e;
 		int d;
 		String res;
@@ -85,6 +86,9 @@ public class ServletGestionUsuario extends HttpServlet {
 		 c=recdatos.getClave();
 		 r=recdatos.getRol();
 		 e=recdatos.getEstado();
+		 
+		 sesion.setAttribute("llevausuario", u);
+		 
 		 
 		 response.sendRedirect("consultar.jsp?do="+doc+"&&us="+u+"&&cl="+c+"&&ro="+r+"&&es="+e);
 			

@@ -46,7 +46,7 @@ public class Creditos extends HttpServlet {
 		//if(request.getParameter("cargar")!=null) {
 			
 		 Part archivo= request.getPart("archivo");
-		   String Url="C:\\\\Users\\\\nyral\\\\eclipse-workspace\\\\Aplicacionweb10\\\\src\\\\main\\\\webapp\\\\documentos\\\\";
+		 String Url="C:\\\\Users\\\\nyral\\\\eclipse-workspace\\\\Aplicacionweb10\\\\src\\\\main\\\\webapp\\\\documentos\\\\";
 			
 			//String Url="C:\\Users\\nyral\\OneDrive\\Escritorio\\arcivoseclipse\\";
 			
@@ -59,9 +59,10 @@ public class Creditos extends HttpServlet {
 			
 					
 				try {
+					
 				InputStream file= archivo.getInputStream();
-				JOptionPane.showMessageDialog(null, Url);
-				File copia= new File(Url+"archivo11.csv");
+				//JOptionPane.showMessageDialog(null, Url);
+				File copia= new File(Url+"archivo12.csv");
 				FileOutputStream escribir= new FileOutputStream(copia);
 				int num=file.read();
 				while(num !=-1) {
@@ -69,8 +70,6 @@ public class Creditos extends HttpServlet {
 					escribir.write(num);
 					num=file.read();
 				}
-				
-				
 				file.close();
 				escribir.close();
 				
@@ -78,7 +77,6 @@ public class Creditos extends HttpServlet {
 				JOptionPane.showMessageDialog(null, "Se cargo el archivo correctamente");
 				
 				CreditoDAO credao=new CreditoDAO();
-				
 				x=credao.cargarcredito(Url+"archivo11.csv");
 				if(x) {
 					JOptionPane.showMessageDialog(null, "Datos cargados en la bd");
@@ -88,6 +86,8 @@ public class Creditos extends HttpServlet {
 				{
 					JOptionPane.showMessageDialog(null, "No se cargaron los datos");
 				}
+				
+				
 				}catch(Exception e) {
 					JOptionPane.showMessageDialog(null, "Error al cargar el archivoooooo: "+e);
 									}
